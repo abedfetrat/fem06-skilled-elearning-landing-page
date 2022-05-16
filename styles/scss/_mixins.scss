@@ -1,0 +1,41 @@
+@use "sass:map";
+
+/* Breakpoints */
+$breakpoints: (
+  "medium": 48em, // 768px
+  "large": 69.375em, // 1110px
+);
+
+@mixin bp-up($bp) {
+  @if map.has-key($breakpoints, $bp) {
+    @media screen and (min-width: map.get($breakpoints, $bp)) {
+      @content;
+    }
+  } @else {
+    @media screen and (min-width: $bp) {
+      @content;
+    }
+    /* @warn "Invalid breakpoint value"; */
+  }
+}
+
+@mixin bp-down($bp) {
+    @if map.has-key($breakpoints, $bp) {
+      @media screen and (max-width: map.get($breakpoints, $bp)) {
+        @content;
+      }
+    } @else {
+      @media screen and (max-width: $bp) {
+        @content;
+      }
+      /* @warn "Invalid breakpoint value"; */
+    }
+  }
+
+@mixin on-event {
+  &:hover,
+  &:focus,
+  &:active {
+    @content;
+  }
+}
