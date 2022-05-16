@@ -58,6 +58,10 @@ h3 {
   text-decoration: none;
   background: linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
   color: hsl(255deg, 100%, 100%);
+  transition: 115ms background ease, 115ms box-shadow ease;
+}
+.cta:hover:not(.cta--secondary), .cta:focus:not(.cta--secondary), .cta:active:not(.cta--secondary) {
+  box-shadow: 0 0 6.25em 6.25em rgba(255, 255, 255, 0.4) inset;
 }
 @media screen and (min-width: 69.375em) {
   .cta {
@@ -75,6 +79,9 @@ h3 {
 }
 .cta--secondary {
   background: hsl(234deg, 53%, 16%);
+}
+.cta--secondary:hover, .cta--secondary:focus, .cta--secondary:active {
+  background: hsl(234deg, 25%, 52%);
 }
 .cta--accent {
   background: linear-gradient(180deg, #4851ff 0%, #f02aa6 100%);
@@ -267,6 +274,10 @@ h3 {
   font-weight: 700;
   text-decoration: none;
   color: hsl(341deg, 92%, 62%);
+  transition: 115ms color ease;
+}
+.courses .course__link:hover, .courses .course__link:focus, .courses .course__link:active {
+  color: #fba7c2;
 }
 @media screen and (min-width: 48em) {
   .courses .course {

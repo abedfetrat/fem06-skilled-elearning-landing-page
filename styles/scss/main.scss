@@ -23,6 +23,7 @@ $text-400: 1rem; // 16px
 
 $color-pink: hsla(341, 92%, 62%, 1);
 $color-dark-blue: hsla(234, 53%, 16%, 1);
+$color-desaturated-purple: hsla(234, 25%, 52%, 1);
 $color-gray: hsla(233, 10%, 56%, 1);
 $color-white: hsla(255, 100%, 100%, 1);
 $gradient-primary: linear-gradient(180deg, #ff6f48 0%, #f02aa6 100%);
@@ -79,6 +80,13 @@ h3 {
   text-decoration: none;
   background: $gradient-primary;
   color: $color-white;
+  transition: 115ms background ease, 115ms box-shadow ease;
+
+  @include on-event {
+    &:not(.cta--secondary) {
+      box-shadow: 0 0 6.25em 6.25em rgba(255, 255, 255, 0.4) inset;
+    }
+  }
 
   @include bp-up(large) {
     padding: 1.1875rem 2rem;
@@ -96,6 +104,10 @@ h3 {
 
   &--secondary {
     background: $color-dark-blue;
+
+    @include on-event {
+      background: $color-desaturated-purple;
+    }
   }
 
   &--accent {
@@ -108,7 +120,7 @@ h3 {
   height: auto;
 
   @include bp-up(large) {
-      width: 6.9375rem;
+    width: 6.9375rem;
   }
 }
 
@@ -286,6 +298,11 @@ h3 {
       font-weight: 700;
       text-decoration: none;
       color: $color-pink;
+      transition: 115ms color ease;
+
+      @include on-event {
+        color: lighten($color: $color-pink, $amount: 20);
+      }
     }
 
     @include bp-up(medium) {
