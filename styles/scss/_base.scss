@@ -1,0 +1,101 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+/* Resets */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Globals */
+
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: $text-400;
+  font-weight: 500;
+  line-height: 1.625;
+  color: $color-gray;
+  overflow-x: hidden;
+
+  @include bp-up(large) {
+    font-size: $text-500;
+  }
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+  color: $color-dark-blue;
+}
+
+/* Shared */
+
+.container {
+  width: min(100%, $max-width + ($side-margin * 2));
+  margin-inline: auto;
+  padding-inline: $side-margin;
+}
+
+.cta {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.9375rem 2.375rem;
+  border-radius: 3.125rem;
+  font-size: $text-400;
+  font-weight: 700;
+  text-decoration: none;
+  background: $gradient-primary;
+  color: $color-white;
+  transition: 115ms background ease, 115ms box-shadow ease;
+
+  @include on-event {
+    &:not(.cta--secondary) {
+      box-shadow: 0 0 6.25em 6.25em rgba(255, 255, 255, 0.4) inset;
+    }
+  }
+
+  @include bp-up(large) {
+    padding: 1.1875rem 2rem;
+    font-size: $text-500;
+  }
+
+  &--secondary,
+  &--accent {
+    padding: 0.625rem 1.5rem;
+
+    @include bp-up(large) {
+      padding: 0.875rem 2rem;
+    }
+  }
+
+  &--secondary {
+    background: $color-dark-blue;
+
+    @include on-event {
+      background: $color-desaturated-purple;
+    }
+  }
+
+  &--accent {
+    background: $gradient-accent;
+  }
+}
+
+.logo {
+  width: 5.5rem;
+  height: auto;
+
+  @include bp-up(large) {
+    width: 6.9375rem;
+  }
+}
+
+.logo-link {
+  line-height: 0;
+}

@@ -15,7 +15,6 @@ $breakpoints: (
     @media screen and (min-width: $bp) {
       @content;
     }
-    /* @warn "Invalid breakpoint value"; */
   }
 }
 
@@ -28,7 +27,6 @@ $breakpoints: (
       @media screen and (max-width: $bp) {
         @content;
       }
-      /* @warn "Invalid breakpoint value"; */
     }
   }
 

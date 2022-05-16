@@ -165,9 +165,6 @@ h3 {
     margin-top: 2.5rem;
   }
 }
-.hero__graphic {
-  /* @warn "Invalid breakpoint value"; */
-}
 @media screen and (max-width: 47.9375em) {
   .hero__graphic {
     display: grid;
