@@ -37,7 +37,7 @@ Tablet
 
 Mobile
 
-[![Mobile Screenshot](/screenshots/mobile_full.png)](/screenshots/mobile.png)
+[![Mobile Screenshot](/screenshots/mobile.png)](/screenshots/mobile_full.png)
 
 ## My process
 
